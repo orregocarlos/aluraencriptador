@@ -1,10 +1,3 @@
-
-/**La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat" */
-
 const btEncriptar = document.getElementById("btEncriptar");
 const btDesencriptar = document.getElementById("btDesencriptar");
 const btCopiar = document.getElementById("btCopiar");
@@ -12,21 +5,26 @@ const btPegar = document.getElementById("btPegar");
 const txProcesar = document.getElementById("procesarTexto");
 const txResultado = document.getElementById("resultado");
 
-
+//Evento que se desencadena al dar clic sobre el boton encriptar
 btEncriptar.addEventListener("click",()=>{
-    document.getElementById("resultado").value = document.getElementById("procesarTexto").value.replace("e","enter").replace("i","imes").replace("a","ai").replace("o","ober").replace("u","ufat")
-    console.log(document.getElementById("resultado").value)
+    //Asignar valor y replazar caracteres
+    document.getElementById("resultado").value = document.getElementById("procesarTexto").value.toLowerCase().replace(/e/g,"enter").replace(/i/g,"imes").replace(/a/g,"ai").replace(/o/g,"ober").replace(/u/g,"ufat");
 })
 
+//Evento que se desencadena al dar clic sobre el boton desencriptar
 btDesencriptar.addEventListener("click",()=>{
-    document.getElementById("resultado").value = document.getElementById("procesarTexto").value.replace("enter","e").replace("imes","i").replace("ai","a").replace("ober","o").replace("ufat","u")
-    console.log(document.getElementById("resultado").value)
+    //Desencriptar caracteres
+    document.getElementById("resultado").value = document.getElementById("procesarTexto").value.replace(/enter/g,"e").replace(/imes/g,"i").replace(/ai/g,"a").replace(/ober/g,"o").replace(/ufat/g,"u");
 })
+
 
 btCopiar.addEventListener("click",()=>{
-    alert("copiar")
+    navigator.clipboard.writeText(txResultado.value);
 })
 
 btPegar.addEventListener("click",()=>{
-    alert("pegar")
+    navigator.clipboard.readText()
+    .then(text=>{
+        txProcesar.value = text; 
+    });
 })

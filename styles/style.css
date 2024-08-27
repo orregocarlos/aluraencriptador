@@ -4,8 +4,9 @@
 }
 
 body{
-    background-image: url("/img/fondo.jfif");
-    background-repeat: no-repeat;    
+    background-image: url("/img/backgr.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
@@ -23,6 +24,11 @@ textarea{
     width: 350px;
     height: 40vh;
     padding: 10px;
+    text-transform: lowercase;
+}
+
+#procesarTexto:focus{
+    user-select: all;
 }
 
 .aling{
