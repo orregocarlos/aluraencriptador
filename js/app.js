@@ -53,3 +53,5 @@ btPegar.addEventListener("click",()=>{
         txProcesar.value = text; 
     });
 })
+
+txProcesar.addEventListener("change",()=>{txResultado.value =""})
