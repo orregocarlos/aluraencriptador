@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
+    <header>
+      <h1>ENCRIPTADOR DE TEXTO</h1>
+    </header>
     <div class="contenedor">
-      <div class="div-proceso aling">
+      <div class="aling">
         <p class="font-serif" >Ingrese el texto a encriptar o desencriptar:</p>
-        <textarea type="text" name="procesarTexto" id="procesarTexto"></textarea>
+        <textarea type="text" name="procesarTexto" id="procesarTexto" placeholder="Solo se permiten minúsculas, sin caracteres especiales"></textarea>
         <div class="div-button">
           <button type="button" id="btEncriptar">Encriptar</button>
           <button type="button" id="btDesencriptar">Desencriptar</button>
           <button type="button" id="btPegar">Pegar</button>
         </div>
       </div>
-      <div class="div-resultado aling">
+      <div class="aling">
         <p class="font-serif" id="tituloResultado">Resultado de texto encriptado o desencriptado</p>
         <textarea type="text" name="resultado" id="resultado" readonly></textarea>
         <div class="div-button">
@@ -25,6 +28,9 @@
         </div>
       </div>
     </div>
+    <footer>
+      <h4>Desarrollado por Carlos Arturo Orrego López</h4>
+    </footer>
     <script src="/js/app.js"></script>
   </body>
 </html>

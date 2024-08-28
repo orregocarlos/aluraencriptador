@@ -6,12 +6,27 @@ const txProcesar = document.getElementById("procesarTexto");
 const txResultado = document.getElementById("resultado");
 const lbTitulo = document.getElementById("tituloResultado");
 
+function startPage(){
+    txResultado.style.backgroundImage="url(./img/blanco.png)";
+}
+
+startPage()
+
+function imagenEncriptado(){
+    txResultado.style.backgroundImage="url(./img/encriptado.png)";
+}
+
+function imagenDesencriptado(){
+    txResultado.style.backgroundImage="url(./img/abierto.png)";
+}
+
 //Evento que se desencadena al dar clic sobre el boton encriptar
 btEncriptar.addEventListener("click",()=>{
     //Asignar valor y replazar caracteres
     if(txProcesar.value != ""){
         txResultado.value = txProcesar.value.toLowerCase().replace(/e/g,"enter").replace(/i/g,"imes").replace(/a/g,"ai").replace(/o/g,"ober").replace(/u/g,"ufat");
         lbTitulo.textContent = "Texto encriptado";
+        imagenEncriptado();
     }else{
         lbTitulo.textContent = "No hay ningun texto para encriptar";
         lbTitulo.style.backgroundColor = "red";
@@ -26,10 +41,11 @@ btEncriptar.addEventListener("click",()=>{
 
 //Evento que se desencadena al dar clic sobre el boton desencriptar
 btDesencriptar.addEventListener("click",()=>{
-    //Desencriptar caracteres
     if(txProcesar.value != ""){
+        //Desencriptar caracteres
         txResultado.value = txProcesar.value.replace(/enter/g,"e").replace(/imes/g,"i").replace(/ai/g,"a").replace(/ober/g,"o").replace(/ufat/g,"u");
         lbTitulo.textContent = "Texto desencriptado";
+        imagenDesencriptado();
     }else{
         lbTitulo.textContent = "No hay ningun texto para desencriptar";
         lbTitulo.style.backgroundColor = "red";
